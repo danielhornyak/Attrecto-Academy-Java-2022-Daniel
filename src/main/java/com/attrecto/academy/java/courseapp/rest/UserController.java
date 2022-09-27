@@ -55,14 +55,14 @@ public class UserController {
     @PutMapping(value= "/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Update an existing user" ,security = {@SecurityRequirement(name = "token")})
-    public MinimalUserDto updateCourse(@PathVariable final Integer id, @Valid @RequestBody MinimalUserDto createUserDto) {
+    public MinimalUserDto updateUser(@PathVariable final Integer id, @Valid @RequestBody MinimalUserDto createUserDto) {
     	return userService.updateUser(id, createUserDto);
     }    
     
     @DeleteMapping(value= "/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Delete an existing user" ,security = {@SecurityRequirement(name = "token")})
-    public void deleteCourse(@PathVariable final Integer id) {
+    public void deleteUser(@PathVariable final Integer id) {
     	userService.deleteUser(id);
     }
 }
